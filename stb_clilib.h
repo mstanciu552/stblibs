@@ -11,6 +11,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+// TODO Check for flag values without equal sign
+
 typedef struct Flag {
   char *name;
   char *desc;
@@ -62,6 +64,7 @@ void declare_flag(char *name, char *desc, void (*callback)()) {
 }
 
 void create_help_list() {
+  printf("Usage: \n");
   for (int i = 0; i < flag_count; i++) {
     printf("%s\n\t%s\n", flags[i]->name, flags[i]->desc);
   }
@@ -81,7 +84,6 @@ void parse_flags() {
 
 void clilib_free() {
   free(flags);
-  free(args);
 }
 
 // Key value pairs implementations
