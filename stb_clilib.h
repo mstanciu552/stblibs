@@ -111,7 +111,7 @@ bool declare_bool_flag(char *name, char *desc, bool default_value) {
   else
     return (!strcmp(value, "true") || !strcmp(value, "1")) ? true : false;
 }
-// TODO Fix this
+
 int declare_int_flag(char *name, char *desc, int default_value) {
   char *value = get_flag_value(name);
   declare_flag(name, desc, NULL);
