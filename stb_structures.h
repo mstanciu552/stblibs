@@ -25,6 +25,8 @@ typedef struct LinkedList {
   struct LinkedList *next;
 } LinkedList;
 
+#define Map(T1, T2) typedef struct { T1 field1; T2 field2; } Map;
+
 Stack *init_stack(int size);
 void push(Stack *stack, void *value);
 void *pop(Stack *stack);
